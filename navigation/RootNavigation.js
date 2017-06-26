@@ -1,6 +1,7 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import Colors from '../constants/Colors';
 
 import MainTabNavigator from './MainTabNavigator';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
@@ -13,8 +14,12 @@ const RootStackNavigator = StackNavigator(
   },
   {
     navigationOptions: () => ({
+      headerStyle: {
+        backgroundColor: Colors.tintColor,
+      },
       headerTitleStyle: {
         fontWeight: 'normal',
+        color: Colors.headerText,
       },
     }),
   }

@@ -8,20 +8,20 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 import Colors from '../constants/Colors';
 
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import CommunityScreen from '../screens/CommunityScreen';
+import AddScreen from '../screens/AddScreen';
+import PlantsScreen from '../screens/PlantsScreen';
 
 export default TabNavigator(
   {
-    Home: {
-      screen: HomeScreen,
+    Community: {
+      screen: CommunityScreen,
     },
-    Links: {
-      screen: LinksScreen,
+    Add: {
+      screen: AddScreen,
     },
-    Settings: {
-      screen: SettingsScreen,
+    Plants: {
+      screen: PlantsScreen,
     },
   },
   {
@@ -31,14 +31,14 @@ export default TabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
-          case 'Home':
-            iconName = 'home';
+          case 'Community':
+            iconName = 'circle';
             break;
-          case 'Links':
-            iconName = 'book';
+          case 'Add':
+            iconName = 'plus-circle';
             break;
-          case 'Settings':
-            iconName = 'cog';
+          case 'Plants':
+            iconName = 'circle';
         }
         return (
           <FontAwesome
@@ -49,14 +49,11 @@ export default TabNavigator(
         );
       },
     }),
-    // Put tab bar on bottom of screen on both platforms
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
-    // Disable animation so that iOS/Android have same behaviors
     animationEnabled: false,
-    // Don't show the labels
     tabBarOptions: {
-      showLabel: false,
+      showLabel: true,
     },
   }
 );
