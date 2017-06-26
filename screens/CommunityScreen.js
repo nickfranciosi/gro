@@ -10,7 +10,8 @@ import {
   View,
 } from 'react-native';
 
-import { MonoText } from '../components/StyledText';
+import Colors from '../constants/Colors';
+import NewsCard from '../components/NewsCard';
 
 export default class CommunityScreen extends React.Component {
   static navigationOptions = {
@@ -22,9 +23,14 @@ export default class CommunityScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView
           style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
-            <Text>Welcome To Community</Text>
-
+          contentContainerStyle={styles.contentContainer}
+        >
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
         </ScrollView>
 
       </View>
@@ -35,9 +41,9 @@ export default class CommunityScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.containerBackground,
   },
   contentContainer: {
-    paddingTop: 80,
+    paddingTop: 10,
   },
 });
